@@ -1,10 +1,22 @@
 main {
     padding: 2rem;
   }
-  
+
   .grid-index-container {
+    display: grid;
+    grid-template-columns: 1fr 250px;
   }
   
+  .grid-index-container > header{
+    grid-column-start: 1;
+    grid-column-end: -1;
+  }
+
+  .grid-index-container > footer{
+    grid-column-start: 1;
+    grid-column-end: -1;
+  }
+
   /* Panel de bienvenida */
   .welcome {
     background-color: var(--color-light);
@@ -21,6 +33,9 @@ main {
   
   /* Panel Ofertas Especiales */
   .ofertas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
   }
   
   .ofertas h2 {
@@ -51,3 +66,22 @@ main {
     margin-top: 2rem;
   }
   
+  @media (max-width: 1000px) and (min-width: 600px) {
+    .grid-index-container{
+      grid-template-columns: 1fr;
+    }
+
+    .ofertas-grid {
+      grid-template-columns: repeat(2,1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .grid-index-container{
+      grid-template-columns: 1fr;
+    }
+
+    .ofertas-grid {
+      grid-template-columns: 1fr;
+    }
+  }

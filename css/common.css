@@ -33,9 +33,16 @@
   }
   
   nav {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
   }
   
   .logo-container {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    column-gap: 20px;
   }
   
   .logo {
@@ -53,6 +60,10 @@
   
   nav ul {
     list-style-type: none;
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    column-gap: 20px;
   }
   
   nav ul li a {
@@ -78,6 +89,10 @@
   }
   
   .footer-grid {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-around;
+    column-gap: 20px;
   }
   
   .footer-section h3 {
@@ -155,5 +170,18 @@
   .config-button:hover,
   .oferta-button:hover {
     background-color: var(--color-dark);
+  }
+
+  @media (max-width :600px) {
+    .footer-grid{
+      display: grid;
+      grid-template-columns: 1fr;
+      row-gap: 20px;
+    }
+
+    .footer-section{
+      display: grid;
+      grid-column-start: 1;
+    }
   }
   
