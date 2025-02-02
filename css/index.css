@@ -72,7 +72,22 @@ main {
     }
 
     .ofertas-grid {
-      grid-template-columns: repeat(2,1fr);
+      grid-template-columns: repeat(4,1fr);
+    }
+
+    .ofertas-grid >:nth-child(1){
+      grid-column-start:1;
+      grid-column-end:3;
+    }
+
+    .ofertas-grid >:nth-child(2){
+      grid-column-start:3;
+      grid-column-end:5;
+    }
+
+    .ofertas-grid >:nth-child(3){
+      grid-column-start:2;
+      grid-column-end:4;
     }
   }
 

@@ -1,4 +1,16 @@
 .grid-models-container {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+}
+
+.grid-models-container > header{
+  grid-column-start: 1;
+  grid-column-end: -1;
+}
+
+.grid-models-container > footer{
+  grid-column-start: 1;
+  grid-column-end: -1;
 }
 
 .filter-sidebar {
@@ -12,6 +24,8 @@
 }
 
 .filter-sidebar form {
+  display: grid;
+  row-gap: 20px;
 }
 
 .filter-sidebar form label {
@@ -44,6 +58,10 @@
 
 .models-grid {
   padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  column-gap: 20px;
+  row-gap: 20px;
 }
 
 .config-button {
@@ -59,4 +77,28 @@
 
 .config-button:hover {
   background-color: var(--color-medium);
+}
+
+@media (max-width: 900px) and (min-width: 600px) {
+  .grid-models-container{
+    grid-template-columns: 1fr;
+  }
+
+  .filter-sidebar form {
+    grid-template-columns: auto 1fr;
+    column-gap: 20px;
+  }
+  
+  .filter-sidebar button {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    justify-self: center;
+  }
+
+}
+
+@media (max-width: 600px) {
+  .grid-models-container{
+    grid-template-columns: 1fr;
+  }
 }
