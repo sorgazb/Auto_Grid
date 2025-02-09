@@ -1,0 +1,210 @@
+:root {
+  --color-dark: #423d3f;
+  --color-medium: #9c9493;
+  --color-light: #dbd7cf;
+  --color-white: #ffffff;
+  --color-off-white: #e7e8e7;
+}
+
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--color-dark);
+  background-color: var(--color-white);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header y navegación */
+header {
+  background-color: var(--color-dark);
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/**
+  *!! Coloco el grid autoflow column para que el elemento nav del header
+  adopte el comportamiento de una columna, y ademas con el justify-content space-between
+  coloco a cada elemento del nav en un marguen del header
+*/
+nav {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+}
+
+/**
+  *!! Coloco el grid autoflow column para que el contenedor del logo 
+  adopte el comportamiento de una columna, y ademas con el aligs-items center los elementos se centran verticalmente
+  en el contenedor.
+*/
+.logo-container {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.logo {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-white);
+}
+
+/**
+  *!! Coloco el grid autoflow column para que el contenedor de la barra de navegacion 
+  adopte el comportamiento de una columna, y ademas con el aligs-items center los elementos se centran verticalmente
+  en el contenedor.
+*/
+nav ul {
+  list-style-type: none;
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  column-gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--color-light);
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  background-color: var(--color-medium);
+  color: var(--color-white);
+}
+
+/* Footer */
+footer {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  padding: 2rem;
+}
+
+/**
+  *!! Aplico mobile first, coloco la propiedad grid-auto-flow
+  para que los elementos del footer se establezcan cada uno
+  en una fila.
+*/
+.footer-grid {
+  display: grid;
+  grid-auto-flow: row;
+  row-gap: 20px;
+}
+
+.footer-section h3 {
+  margin-bottom: 1rem;
+  color: var(--color-light);
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--color-medium);
+  padding-bottom: 0.5rem;
+}
+
+.footer-section ul {
+  list-style-type: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+  color: var(--color-light);
+  text-decoration: none;
+}
+
+.footer-section p {
+  color: var(--color-light);
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+  color: var(--color-off-white);
+}
+
+/* Imágenes responsive */
+img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Estilos para model-card y clases relacionadas */
+.model-card,
+.oferta-card {
+  background-color: var(--color-off-white);
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  text-align: center;
+  display: grid;
+  row-gap: 20px;
+  grid-template-rows: auto auto 1fr auto;
+}
+
+.model-card img,
+.oferta-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.model-card h3,
+.oferta-card h3 {
+  color: var(--color-dark);
+}
+
+.config-button,
+.oferta-button {
+  display: inline-block;
+  background-color: var(--color-medium);
+  color: var(--color-white);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.config-button:hover,
+.oferta-button:hover {
+  background-color: var(--color-dark);
+}
+
+/**
+  *!! Media query apartir de los 600px
+*/
+@media (min-width : 600px){
+  /**
+    *!! Establezo una disposicion en columnas de los distintos elementos del footer
+    con el grid-auto-flow columns.
+  */
+  .footer-grid{
+    grid-auto-flow: column;
+    justify-content: space-around;
+    column-gap: 20px;
+  }
+}
