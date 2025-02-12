@@ -34,8 +34,8 @@ header {
 
 /**
   *!! Coloco el grid autoflow column para que el elemento nav del header
-  adopte el comportamiento de una columna, y ademas con el justify-content space-between
-  coloco a cada elemento del nav en un marguen del header
+  *!! adopte el comportamiento de una columna, y ademas con el justify-content space-between
+  *!! coloco a cada elemento del nav en un marguen del header
 */
 nav {
   display: grid;
@@ -45,8 +45,8 @@ nav {
 
 /**
   *!! Coloco el grid autoflow column para que el contenedor del logo 
-  adopte el comportamiento de una columna, y ademas con el aligs-items center los elementos se centran verticalmente
-  en el contenedor.
+  *!! adopte el comportamiento de una columna, y ademas con el aligs-items center los elementos se centran verticalmente
+  *!! en el contenedor.
 */
 .logo-container {
   display: grid;
@@ -70,8 +70,8 @@ nav {
 
 /**
   *!! Coloco el grid autoflow column para que el contenedor de la barra de navegacion 
-  adopte el comportamiento de una columna, y ademas con el aligs-items center los elementos se centran verticalmente
-  en el contenedor.
+  *!! adopte el comportamiento de una columna, y ademas con el aligs-items center los elementos se centran verticalmente
+  *!! en el contenedor.
 */
 nav ul {
   list-style-type: none;
@@ -105,8 +105,8 @@ footer {
 
 /**
   *!! Aplico mobile first, coloco la propiedad grid-auto-flow
-  para que los elementos del footer se establezcan cada uno
-  en una fila.
+  *!! para que los elementos del footer se establezcan cada uno
+  *!! en una fila.
 */
 .footer-grid {
   display: grid;
@@ -200,7 +200,7 @@ img {
 @media (min-width : 600px){
   /**
     *!! Establezo una disposicion en columnas de los distintos elementos del footer
-    con el grid-auto-flow columns.
+    *!! con el grid-auto-flow columns.
   */
   .footer-grid{
     grid-auto-flow: column;

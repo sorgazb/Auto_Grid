@@ -4,7 +4,7 @@ main {
 
 /**
   *!! Coloco el grid-template-columns 1fr para establecer el contenido de
-  la pagina como una unica columna que ocupe todo el espacio disponible
+  *!! la pagina como una unica columna que ocupe todo el espacio disponible
 */
 .grid-index-container {
   display: grid;
@@ -13,7 +13,7 @@ main {
 
 /**
   *!! Coloco el comienzo y el fin del header para que ocupen todo el ancho
-    de la columna establecida en la clase anterior (grid-index-container)
+  *!! de la columna establecida en la clase anterior (grid-index-container)
 */
 .grid-index-container > header{
   grid-column-start: 1;
@@ -22,7 +22,7 @@ main {
 
 /**
   *!! Coloco estas propiedades para que ocurra el mismo comportamiento que
-    en el header
+  *!!  en el header
 */
 .grid-index-container > footer{
   grid-column-start: 1;
@@ -47,9 +47,9 @@ main {
 
 /**
   *!! Aplico el mobile first, establezco el grid-template-columns 1fr para
-  que lo elementos del contenedor de ofertas ocupen una unica columna
-  en la cual ocupan todo el ancho disponible dejando un espacio entre una y
-  otra de 20px
+  *!! que lo elementos del contenedor de ofertas ocupen una unica columna
+  *!! en la cual ocupan todo el ancho disponible dejando un espacio entre una y
+  *!! otra de 20px
 */
 .ofertas-grid {
   display: grid;
@@ -92,7 +92,7 @@ section.ofertas {
 
   /**
     *!! Establezco una distribucion de 4 columnas para el contenedor de ofertas
-    en el cada columna ocupa el mismo ancho.
+    *!! en el cada columna ocupa el mismo ancho.
   */
   .ofertas-grid {
     grid-template-columns: repeat(4, 1fr);
@@ -100,7 +100,7 @@ section.ofertas {
 
   /**
     *!! Coloco el primer hijo del contenedor de ofertas para que comience
-    al principio del contenedor (columna 1) y acabe justo en la mitad (columna 3)
+    *!! al principio del contenedor (columna 1) y acabe justo en la mitad (columna 3)
   */
   .ofertas-grid > :nth-child(1){
     grid-column-start: 1;
@@ -109,7 +109,7 @@ section.ofertas {
 
   /**
     *!! Coloco el segundo hijo del contenedor de ofertas para que comience
-    a la mitad del contenedor (columna 3) y acabe justo en al final (columna 5)
+    *!! a la mitad del contenedor (columna 3) y acabe justo en al final (columna 5)
   */
   .ofertas-grid > :nth-child(2){
     grid-column-start: 3;
@@ -118,7 +118,7 @@ section.ofertas {
 
   /**
     *!! Coloco el tercer hijo del contenedor de ofertas para que quede situado
-    en la mitad del contenedor
+    *!! en la mitad del contenedor
   */
   .ofertas-grid > :nth-child(3){
     grid-column-start: 2;
@@ -133,10 +133,10 @@ section.ofertas {
 
   /**
     *!! Coloco el grid-template-columns para establece dos columnas en el contenedor
-    principal una de 250px la cual se aplicara a la parte de noticias que estara situada
-    a la derecha del contenedor y una que ocupe el ancho restante disponible para el contenedor de cards de 
-    ofertas, estas dos columnas no se ven reflejadas en el header y el footer
-    por lo explicado en las clases de estos elementos.
+    *!! principal una de 250px la cual se aplicara a la parte de noticias que estara situada
+    *!! a la derecha del contenedor y una que ocupe el ancho restante disponible para el contenedor de cards de 
+    *!! ofertas, estas dos columnas no se ven reflejadas en el header y el footer
+    *!! por lo explicado en las clases de estos elementos.
   */
   .grid-index-container {
     grid-template-columns: 1fr 250px;
@@ -144,7 +144,7 @@ section.ofertas {
 
   /**
     *!! Coloco el grid-template-columns para establcer tres columnas que se 
-    repartan el espacio disponible en el contenedor
+    *!! repartan el espacio disponible en el contenedor
   */
   .ofertas-grid {
     grid-template-columns: repeat(3, 1fr);
