@@ -1,17 +1,29 @@
+/**
+  *!! Coloco el grid-template-columns 1fr para establecer el contenido de
+  *!! la pagina como una unica columna que ocupe todo el espacio disponible
+*/
 .grid-models-container {
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 1fr;
 }
 
-.grid-models-container > header{
-  grid-column-start: 1;
-  grid-column-end: -1;
-}
-
-.grid-models-container > footer{
-  grid-column-start: 1;
-  grid-column-end: -1;
-}
+  /**
+    *!! Coloco el comienzo y el fin del header para que ocupen todo el ancho
+    *!! de la columna establecida en la clase anterior (grid-models-container)
+  */
+  .grid-models-container > header{
+    grid-column-start: 1;
+    grid-column-end: -1;
+  }
+  
+  /**
+    *!! Coloco estas propiedades para que ocurra el mismo comportamiento que
+    *!! en el header
+  */
+  .grid-models-container > footer{
+    grid-column-start: 1;
+    grid-column-end: -1;
+  }
 
 .filter-sidebar {
   background-color: var(--color-off-white);
@@ -23,6 +35,10 @@
   margin-bottom: 1rem;
 }
 
+/**
+  *!! Aplico el mobile first, genera un espacio entre los diferentes elementos
+  *!! del formulario de filtros de 20px entre cada elemento.
+*/
 .filter-sidebar form {
   display: grid;
   row-gap: 20px;
@@ -56,11 +72,13 @@
   background-color: var(--color-medium);
 }
 
+/**
+  *!! Aplico el mobile first, genera un espacio entre los diferentes elementos
+  *!! del contenedor de modelos de 20px entre cada card.
+*/
 .models-grid {
   padding: 2rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  column-gap: 20px;
   row-gap: 20px;
 }
 
@@ -79,16 +97,27 @@
   background-color: var(--color-medium);
 }
 
-@media (max-width: 900px) and (min-width: 600px) {
-  .grid-models-container{
-    grid-template-columns: 1fr;
-  }
+/**
+  *!! Media query de 600px a 1000px
+*/
+@media (max-width: 1000px) and (min-width: 600px) {
 
+  /**
+    *!! Coloco el grid-template-columns: auto 1fr, para que el en el formulario
+    *!! aparezan 2 columnas, una que sea para los labels, la cual ocupara el ancho
+    *!! de la etiqueta, y otra para los inputs, la cual ocupara el espacio resante
+    *!! del contenedor del formulario.
+  */
   .filter-sidebar form {
     grid-template-columns: auto 1fr;
     column-gap: 20px;
   }
   
+  /**
+    *!! Coloco las propiedades de inicio y fin de columna en la fila del buton
+    *!! para que no se aplique la distribucion establecida anteriormente en el formulario,
+    *!! y el justify-self para que el propio boton se centre en la columna establecida.
+  */
   .filter-sidebar button {
     grid-column-start: 1;
     grid-column-end: -1;
@@ -97,8 +126,38 @@
 
 }
 
-@media (max-width: 600px) {
-  .grid-models-container{
-    grid-template-columns: 1fr;
+/**
+  *!! Media query que se aplica apartir de los 600px
+*/
+@media (min-width : 600px){
+  /**
+    *!! Coloco el grid-template-columns para que los diferentes elementos
+    *!! del contenedor de modelos se vayan adapatando al espacio que hay disponible
+    *!! en el que la medida minima de los elementos es de 250px y la maxima el
+    *!! espacio disponible
+  */
+  .models-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    column-gap: 20px;
+    row-gap : 20px
   }
+}
+
+/**
+  *!! Media query para anchuras mayores a 1000px
+*/
+@media (min-width : 1000px){
+
+  /**
+    *!! Coloco el grid-template-columns para establece dos columnas en el contenedor
+    *!! de los modelos una de 300px la cual se aplicara a la parte de los filtros
+    *!! y una que ocupe el ancho restante disponible para el contenedor de cards de 
+    *!! modelos, estas dos columnas no se ven reflejadas en el header y el footer
+    *!! por lo explicado en las clases de estos elementos.
+  */
+  .grid-models-container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+  }
+  
 }

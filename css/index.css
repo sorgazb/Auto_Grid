@@ -1,102 +1,152 @@
 main {
-    padding: 2rem;
+  padding: 2rem;
+}
+
+/**
+  *!! Coloco el grid-template-columns 1fr para establecer el contenido de
+  *!! la pagina como una unica columna que ocupe todo el espacio disponible
+*/
+.grid-index-container {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+/**
+  *!! Coloco el comienzo y el fin del header para que ocupen todo el ancho
+  *!! de la columna establecida en la clase anterior (grid-index-container)
+*/
+.grid-index-container > header{
+  grid-column-start: 1;
+  grid-column-end: -1;
+}
+
+/**
+  *!! Coloco estas propiedades para que ocurra el mismo comportamiento que
+  *!!  en el header
+*/
+.grid-index-container > footer{
+  grid-column-start: 1;
+  grid-column-end: -1;
+}
+
+/* Panel de bienvenida */
+.welcome {
+  background-color: var(--color-light);
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  color: var(--color-dark);
+}
+
+.welcome h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Panel Ofertas Especiales */
+
+/**
+  *!! Aplico el mobile first, establezco el grid-template-columns 1fr para
+  *!! que lo elementos del contenedor de ofertas ocupen una unica columna
+  *!! en la cual ocupan todo el ancho disponible dejando un espacio entre una y
+  *!! otra de 20px
+*/
+.ofertas-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.ofertas h2 {
+  margin-bottom: 1rem;
+  color: var(--color-black);
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: var(--color-light);
+  padding: 2rem;
+  color: var(--color-dark);
+}
+
+.sidebar h2 {
+  margin-bottom: 1rem;
+}
+
+.sidebar ul {
+  list-style-type: none;
+}
+
+.sidebar ul li {
+  margin-bottom: 0.5rem;
+}
+
+section.ofertas {
+  margin-top: 2rem;
+}
+
+/**
+  *!! Media query de 600px a 1000px
+*/
+@media (max-width : 1000px) and (min-width : 600px){
+
+  /**
+    *!! Establezco una distribucion de 4 columnas para el contenedor de ofertas
+    *!! en el cada columna ocupa el mismo ancho.
+  */
+  .ofertas-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 
+  /**
+    *!! Coloco el primer hijo del contenedor de ofertas para que comience
+    *!! al principio del contenedor (columna 1) y acabe justo en la mitad (columna 3)
+  */
+  .ofertas-grid > :nth-child(1){
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  /**
+    *!! Coloco el segundo hijo del contenedor de ofertas para que comience
+    *!! a la mitad del contenedor (columna 3) y acabe justo en al final (columna 5)
+  */
+  .ofertas-grid > :nth-child(2){
+    grid-column-start: 3;
+    grid-column-end: 5;
+  }
+
+  /**
+    *!! Coloco el tercer hijo del contenedor de ofertas para que quede situado
+    *!! en la mitad del contenedor
+  */
+  .ofertas-grid > :nth-child(3){
+    grid-column-start: 2;
+    grid-column-end: 4;
+  }
+}
+
+/**
+  *!! Media query apartir de los 1000px de ancho
+*/
+@media (min-width : 1000px){
+
+  /**
+    *!! Coloco el grid-template-columns para establece dos columnas en el contenedor
+    *!! principal una de 250px la cual se aplicara a la parte de noticias que estara situada
+    *!! a la derecha del contenedor y una que ocupe el ancho restante disponible para el contenedor de cards de 
+    *!! ofertas, estas dos columnas no se ven reflejadas en el header y el footer
+    *!! por lo explicado en las clases de estos elementos.
+  */
   .grid-index-container {
-    display: grid;
     grid-template-columns: 1fr 250px;
   }
-  
-  .grid-index-container > header{
-    grid-column-start: 1;
-    grid-column-end: -1;
-  }
 
-  .grid-index-container > footer{
-    grid-column-start: 1;
-    grid-column-end: -1;
-  }
-
-  /* Panel de bienvenida */
-  .welcome {
-    background-color: var(--color-light);
-    padding: 2rem;
-    border-radius: 10px;
-    margin-bottom: 2rem;
-    color: var(--color-dark);
-  }
-  
-  .welcome h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  /* Panel Ofertas Especiales */
+  /**
+    *!! Coloco el grid-template-columns para establcer tres columnas que se 
+    *!! repartan el espacio disponible en el contenedor
+  */
   .ofertas-grid {
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
   }
-  
-  .ofertas h2 {
-    margin-bottom: 1rem;
-    color: var(--color-black);
-  }
-  
-  /* Sidebar */
-  .sidebar {
-    background-color: var(--color-light);
-    padding: 2rem;
-    color: var(--color-dark);
-  }
-  
-  .sidebar h2 {
-    margin-bottom: 1rem;
-  }
-  
-  .sidebar ul {
-    list-style-type: none;
-  }
-  
-  .sidebar ul li {
-    margin-bottom: 0.5rem;
-  }
-  
-  section.ofertas {
-    margin-top: 2rem;
-  }
-  
-  @media (max-width: 1000px) and (min-width: 600px) {
-    .grid-index-container{
-      grid-template-columns: 1fr;
-    }
-
-    .ofertas-grid {
-      grid-template-columns: repeat(4,1fr);
-    }
-
-    .ofertas-grid >:nth-child(1){
-      grid-column-start:1;
-      grid-column-end:3;
-    }
-
-    .ofertas-grid >:nth-child(2){
-      grid-column-start:3;
-      grid-column-end:5;
-    }
-
-    .ofertas-grid >:nth-child(3){
-      grid-column-start:2;
-      grid-column-end:4;
-    }
-  }
-
-  @media (max-width: 600px) {
-    .grid-index-container{
-      grid-template-columns: 1fr;
-    }
-
-    .ofertas-grid {
-      grid-template-columns: 1fr;
-    }
-  }
+}
